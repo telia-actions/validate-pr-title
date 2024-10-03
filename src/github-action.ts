@@ -1,6 +1,7 @@
 import { context } from '@actions/github';
 import { getInput, info, setFailed } from '@actions/core';
 import { lint } from './lib/lint';
+import { stringToBoolean } from './lib/util';
 
 export const run = async (): Promise<void> => {
   const title = context.payload.pull_request?.title;
@@ -24,7 +25,7 @@ export const run = async (): Promise<void> => {
     getInput('prTitlePrefix'),
     getInput('caseSensetive') === ''
       ? false
-      : Boolean(getInput('caseSensetive')),
+      : stringToBoolean(getInput('caseSensetive')),
   );
   if (!isValid) {
     setFailed(`❌ The title of this PR does not meet the requirements`);

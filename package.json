@@ -7,7 +7,8 @@
     "build": "ncc build src/index.ts",
     "format": "prettier . --write",
     "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "jest",
+    "lint-test-build": "npm run lint && npm run test && npm run build"
   },
   "author": "Fredrik Anbacken",
   "license": "MIT",

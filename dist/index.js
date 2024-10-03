@@ -29220,6 +29220,7 @@ exports.run = void 0;
 const github_1 = __nccwpck_require__(5438);
 const core_1 = __nccwpck_require__(2186);
 const lint_1 = __nccwpck_require__(3839);
+const util_1 = __nccwpck_require__(2494);
 const run = () => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     const title = (_a = github_1.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.title;
@@ -29234,7 +29235,7 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     const isValid = (0, lint_1.lint)(title, (0, core_1.getInput)('prTitlePrefix'), (0, core_1.getInput)('caseSensetive') === ''
         ? false
-        : Boolean((0, core_1.getInput)('caseSensetive')));
+        : (0, util_1.stringToBoolean)((0, core_1.getInput)('caseSensetive')));
     if (!isValid) {
         (0, core_1.setFailed)(`❌ The title of this PR does not meet the requirements`);
     }
@@ -29274,6 +29275,21 @@ function lint(title, prefix, caseSensetive) {
     return title.startsWith(prefix.trim());
 }
 exports.lint = lint;
+
+
+/***/ }),
+
+/***/ 2494:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.stringToBoolean = void 0;
+function stringToBoolean(value) {
+    return value.toLowerCase() === 'true';
+}
+exports.stringToBoolean = stringToBoolean;
 
 
 /***/ }),
