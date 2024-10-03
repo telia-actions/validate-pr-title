@@ -1,0 +1,19 @@
+name: Validate PR title
+description: Validate the PR title to match the given prefixes.
+inputs:
+  githubToken:
+    description: 'GitHub token'
+    required: true
+  prTitlePrefix:
+    description: |
+      Can be in any of these formats:
+      'feat:' - single prefix
+      'feat:, fix:' - multiple prefixes
+    type: string
+    required: true
+  caseSensetive:
+    description: 'Case sensetive'
+    type: boolean
+runs:
+  using: node20
+  main: dist/index.js
