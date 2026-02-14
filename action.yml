@@ -1,9 +1,6 @@
 name: Validate PR title
 description: Validate the PR title to match the given prefixes.
 inputs:
-  githubToken:
-    description: 'GitHub token'
-    required: true
   prTitlePrefix:
     description: |
       Can be in any of these formats:
