@@ -12,10 +12,15 @@
   },
   "author": "Fredrik Anbacken",
   "license": "MIT",
+  "overrides": {
+    "minimatch@<=3.1.5": "3.1.5",
+    "minimatch@>3 <=10.2.4": "10.2.4",
+    "flatted": ">=3.4.0"
+  },
   "dependencies": {
     "@actions/core": "^2.0.3",
     "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.1"
+    "@actions/github": "^8.0.0"
   },
   "devDependencies": {
     "@swc/core": "^1.15.11",
