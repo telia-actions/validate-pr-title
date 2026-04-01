@@ -7,7 +7,7 @@
     "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:@actions/core --external:@actions/github",
     "format": "biome format --write",
     "lint": "biome lint",
-    "test": "jest",
+    "test": "vitest run",
     "lint-test-build": "npm run lint && npm run test && npm run build"
   },
   "author": "Fredrik Anbacken",
@@ -24,13 +24,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.10",
-    "@swc/core": "^1.15.11",
-    "@swc/jest": "^0.2.39",
-    "@types/jest": "^30.0.0",
     "@types/node": "^25.2.3",
     "esbuild": "^0.24.0",
-    "jest": "^30.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.2"
   },
   "engines": {
     "node": ">=24.13.1 <25"

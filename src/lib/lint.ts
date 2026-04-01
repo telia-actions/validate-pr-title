@@ -1,8 +1,4 @@
-export function lint(
-  title: string,
-  prefix: string,
-  caseSensetive: boolean,
-): boolean {
+export function lint(title: string, prefix: string, caseSensetive: boolean): boolean {
   if (!title || !prefix) {
     return false;
   }

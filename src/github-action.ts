@@ -6,9 +6,7 @@ import { context } from '@actions/github';
 export const run = async (): Promise<void> => {
   const title = context.payload.pull_request?.title;
 
-  info(
-    `🔎 Checking if the title of this PR "${title}" meets the requirements ...`,
-  );
+  info(`🔎 Checking if the title of this PR "${title}" meets the requirements ...`);
 
   if (!title) {
     setFailed(`❌ Could not find the title of this PR`);
@@ -23,9 +21,7 @@ export const run = async (): Promise<void> => {
   const isValid = lint(
     title,
     getInput('prTitlePrefix'),
-    getInput('caseSensetive') === ''
-      ? false
-      : stringToBoolean(getInput('caseSensetive')),
+    getInput('caseSensetive') === '' ? false : stringToBoolean(getInput('caseSensetive')),
   );
   if (!isValid) {
     setFailed(`❌ The title of this PR does not meet the requirements`);
