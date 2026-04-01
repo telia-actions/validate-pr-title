@@ -1,7 +1,7 @@
-import { context } from '@actions/github';
 import { getInput, info, setFailed } from '@actions/core';
 import { lint } from './lib/lint';
 import { stringToBoolean } from './lib/util';
+import { context } from '@actions/github';
 
 export const run = async (): Promise<void> => {
   const title = context.payload.pull_request?.title;
