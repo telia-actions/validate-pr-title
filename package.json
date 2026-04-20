@@ -4,7 +4,7 @@
   "description": "Validate the PR title to match the given prefixes",
   "main": "dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:@actions/core --external:@actions/github",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js",
     "format": "biome format --write",
     "lint": "biome lint",
     "test": "vitest run",
