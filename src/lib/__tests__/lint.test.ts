@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { lint } from '../lint';
+import { lint } from '../lint.js';
 
 describe('lint', () => {
   it('should return false if title or prefix is empty', () => {

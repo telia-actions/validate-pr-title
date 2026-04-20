@@ -1,6 +1,6 @@
 import { getInput, info, setFailed } from '@actions/core';
-import { lint } from './lib/lint';
-import { stringToBoolean } from './lib/util';
+import { lint } from './lib/lint.js';
+import { stringToBoolean } from './lib/util.js';
 import { context } from '@actions/github';
 
 export const run = async (): Promise<void> => {

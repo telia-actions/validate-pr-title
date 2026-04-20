@@ -1,3 +1,3 @@
-import { run } from './github-action';
+import { run } from './github-action.js';
 
 run();
