@@ -6,12 +6,6 @@ This GitHub Action validates the title of a pull request to ensure it meets spec
 
 ## Inputs
 
-### `githubToken`
-
-**Required**: `true`
-
-Description: GitHub token.
-
 ### `prTitlePrefix`
 
 **Required**: `true`
@@ -49,6 +43,5 @@ jobs:
       - name: Validate PR title
         uses: telia-actions/validate-pr-title@v1
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
           prTitlePrefix: 'feat:, fix:'
           caseSensetive: false
